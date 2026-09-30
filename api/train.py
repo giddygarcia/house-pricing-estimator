@@ -1,15 +1,16 @@
-import pandas as pd
-import numpy as np
 import joblib
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer, IterativeImputer
-from sklearn.preprocessing import TargetEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error
+import numpy as np
+import pandas as pd
 from lightgbm import LGBMRegressor
+from sklearn.compose import ColumnTransformer
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import IterativeImputer, SimpleImputer
+from sklearn.metrics import mean_absolute_error
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import TargetEncoder
 
-df = pd.read_csv("../dataset/house_listings_cleaned.csv")
+df = pd.read_csv("dataset/house_listings_cleaned.csv")
 
 # Target variable and features
 X = df.drop(["Price", "PricePerSqm", "EnergyCertificate"], axis=1)
