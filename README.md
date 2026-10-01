@@ -24,9 +24,9 @@ This repository focuses on **building and deploying a predictive machine learnin
 3. Full ML Pipeline to Deployment: Deploy the model using Docker and GCP
   
 
-<div align="center" style="width: 95%; margin: auto;">
+<div align="center" width=50%">
 
-<video src="visuals/demo-vid.mp4" alt="Video demo" controls width="100%"></video>
+<video width="90%" src="https://github.com/user-attachments/assets/c7577937-99f3-4f70-8627-45c2ae1f4bfc" controls></video>
 
 </div>
 
