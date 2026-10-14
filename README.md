@@ -11,7 +11,7 @@ This repository focuses on **building and deploying a predictive machine learnin
 *Note: While the model was previously successfully deployed, the GCP deployment is no longer live due to hosting cost concerns. Rest assured the model and deployment code remain fully available in this repository for recreation.*
 
 <div align="center">
-  <img src="visuals/demo-image.png" alt="Model demo" width="50%"/>
+  <img src="visuals/demo-image.png" alt="Model demo" width="40%"/>
 </div>
 
 <div align="center" width="50%">
@@ -53,6 +53,9 @@ This repository focuses on **building and deploying a predictive machine learnin
 - Optuna
 - SHAP
 - joblib
+   
+    
+**Tech stack:** Python, FastAPI, Docker, LightGBM
 
 ### 🔎 Viewing / Installation:
 * *Viewing Option:* For complete analysis and demonstration, simply view the notebook file `RealEstateAnalysis.ipynb`.
@@ -63,7 +66,13 @@ This repository focuses on **building and deploying a predictive machine learnin
         cd house-pricing-estimator
         uv sync
         ```
-    2. **Model Recreation:** Run `train.py` found inside the "api" folder to rebuild and refit the Light Gradient Boosting model used in this research.  
+    2. **Live Predictions:** To run the House Pricing Prediction API locally, execute the following command from the project root folder:
+        ```bash
+        uv run python -m uvicorn api.main:api --reload
+        ```
+        * Once the server starts, open http://127.0.0.1:8000/docs to test the /predict endpoint and get live house price predictions.
+        * Press Ctrl + C in the terminal to stop the server.
+    3. **Model Recreation:* If the user wishes to recreate and retrain the model, run `train.py` found inside the "api" folder to rebuild and refit the Light Gradient Boosting model used in this research.  
         ```bash 
         uv run python api/train.py
         ```
